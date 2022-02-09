@@ -1,0 +1,26 @@
+﻿@using System.Threading;
+
+
+<div class="card text-center">
+    <div class="card-header">
+        Carga inicial interrompida
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <form asp-action="CargaInicial">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Carga inicial interrompida, pois não foi possível concluir o cadastro de Filial.</h5>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <input type="submit" value="<< Voltar para carga incial" class="btn btn-primary  col-12" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

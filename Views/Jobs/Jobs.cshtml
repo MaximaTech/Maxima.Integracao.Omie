@@ -1,0 +1,44 @@
+@using Domain.DTO.FrontEnd
+
+
+@model List<JobsCronDTO>
+
+<div class="card text-center">
+    <div class="card-header">
+        Sincronização de informações
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            Por favor, escolha a frequência da execução de cada Job para realizarmos a sincronização das informações
+        </p>
+        <p>
+            Lembre-se: O computador / servidor deve estar ligado nos horários agendados para uma maior fidelidade e segurança
+        </p>
+    </div>
+
+    <h3> Selecione </h3>
+
+    <form asp-action="JobsCronSave" class="row">
+        <div asp-validation-summary="ModelOnly" class="col-12 text-danger"></div>
+        <div class="row">
+            @{
+                int position = 0;
+                @foreach (var item in @ViewBag.ListaJobs)
+                {
+                    <div class="form-group row col-6">
+                        <label class="control-label col col-form-label"> @item.Descricao </label>
+                        <div class="col">
+                            <input asp-for="@Model[position].Job" type="text" class="form-control" value="@item.Job" hidden />
+                            <input asp-for="@Model[position].Cron" type="time" class="form-control" required
+                        value="@item.Cron" />
+                        </div>
+                    </div>
+                    position++;
+                }
+            }
+        </div>
+        <div class="form-group col-12">
+            <input type="submit" value="Proximo" class="btn btn-primary col-8" style="margin:auto" />
+        </div>
+    </form>
+</div>

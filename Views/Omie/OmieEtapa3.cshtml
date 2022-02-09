@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Domain.DTO.FrontEnd.ConfiguracaoOmieEtapa3DTO
+
+@{
+    ViewData["Title"] = "Configuração Omie";
+}
+
+
+<div class="card text-center">
+    <div class="card-header">
+        OMIE
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <form asp-action="OmieEtapa3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                   <th>Meio de pagamentos</th>
+                                <th>Conta Corrente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @{
+                                int position = 0;
+                                @foreach (var item in @ViewBag.MeiosDePagamento)
+                                { 
+                                    <input value="@item.Key" type="hidden" asp-for="MeiosDePagamento[position]">
+                                    <tr>
+                                        <td>
+                                            <b> @item.Key - @item.Value </b>
+                                        </td>
+                                        <td>
+                                            <select required="required" asp-items="@item.contasCorrentes" asp-for="ContaCorrente[position]"
+                                            class="form-control text-center mb-2">
+                                                <option selected disabled> Selecione... </option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    position++;
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+
+
+
+
+                    <div class="form-group col-12">
+                        <input type="submit" value="Proximo" class="btn btn-primary  col-12" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

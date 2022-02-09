@@ -1,0 +1,27 @@
+﻿@using System.Threading
+
+<div class="card text-center">
+    <div class="card-header">
+        Carga Inicial
+    </div>
+    <div class="card-body">
+        <p class="card-text">Estamos realizando a carga inicial dos dados, por favor aguarde a conclusão do processo</p>
+        <div class="progress"
+             style="height: 2rem">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                 style="width: 100%; font-weight:700">
+                CARREGANDO...
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-danger"
+         style="margin: 1.2em; margin-top: 0em !important">
+        <strong>ATENÇÃO!</strong> Mantenha o computador ligado durante todo o processo
+    </div>
+</div>
+
+<script>
+    setTimeout(function(){
+       window.location.reload(1);
+    }, 60000);
+</script>

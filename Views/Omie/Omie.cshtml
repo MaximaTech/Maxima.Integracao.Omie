@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Domain.DTO.FrontEnd.ConfiguracaoOmieDTO
+
+@{
+    ViewData["Title"] = "Configuração Omie";
+}
+
+
+<div class="card text-center">
+    <div class="card-header">
+        OMIE
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <form asp-action="Omie">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group row">
+                        <label asp-for="AppKey" class="control-label col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+
+                            <input asp-for="AppKey" class="form-control" placeholder="AppKey" required />
+                            <span asp-validation-for="AppKey" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="AppSecret" class="control-label col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+
+                            <input asp-for="AppSecret" type="password" class="form-control" placeholder="AppSecret" required />
+                            <span asp-validation-for="AppSecret" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <input type="submit" value="Proximo" class="btn btn-primary  col-12" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
