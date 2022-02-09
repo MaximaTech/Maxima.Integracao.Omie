@@ -11,12 +11,12 @@ Acesse nossa [documentação](https://github.com/MaximaTech/Maxima.Integracao.Om
 
 ### Integração com o ERP [Omie](https://www.omie.com.br/)
 
-Este repositório contém a implementação de um projeto de integração com o ERP Omie que pode servir como base para a integração com outros sistemas. 
+Este repositório contém a implementação de um projeto de integração com o ERP Omie que pode servir como base para a integração com outros sistemas.
 Os detalhes desta implementação, incluindo o uso do SDK são descritos na nossa seção de [Wiki](https://github.com/MaximaTech/Maxima.Integracao.Omie/wiki).
 
 ### Contribuindo com este projeto
 
-Caso tenha alguma sugestão de melhoria, encontre algum problema abra uma Issue aqui no Github ou entre em contato através do telefone (62) 3412-2900.
+Caso tenha alguma sugestão de melhoria ou encontre algum problema, abra uma Issue ou uma Pull Request aqui no Github que iremos avaliar e realizar as devidas tratativas.
 
 ***
 
