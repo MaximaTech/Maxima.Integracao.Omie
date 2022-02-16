@@ -46,7 +46,7 @@ namespace Maxima.Cliente.Omie.Domain.Logic
             RecurringJob.AddOrUpdate<ICidadeApiOmie>(x => x.EnviarCidades(CancellationToken.None), RecuperarCronAsync(JobsCronEnumOmie.EnviarCidade), timeZone: TimeZoneInfo.Local);
             RecurringJob.AddOrUpdate<IFilialApiOmie>(x => x.EnviarFiliais(CancellationToken.None), RecuperarCronAsync(JobsCronEnumOmie.EnviarFiliais), timeZone: TimeZoneInfo.Local);
             RecurringJob.AddOrUpdate<ITituloApiOmie>(x => x.EnviarTitulos(CancellationToken.None, false), RecuperarCronAsync(JobsCronEnumOmie.EnviarTitulos), timeZone: TimeZoneInfo.Local);
-            RecurringJob.AddOrUpdate<IPedidoHistoricoApiOmie>(x => x.HistoricoPedidos(CancellationToken.None), RecuperarCronAsync(JobsCronEnumOmie.SincronizarStatusPedido), timeZone: TimeZoneInfo.Local);
+            //RecurringJob.AddOrUpdate<IPedidoHistoricoApiOmie>(x => x.HistoricoPedidos(CancellationToken.None), RecuperarCronAsync(JobsCronEnumOmie.SincronizarStatusPedido), timeZone: TimeZoneInfo.Local);
         }
 
         public string RecuperarCronAsync(JobsCronEnumOmie jobEnum)
