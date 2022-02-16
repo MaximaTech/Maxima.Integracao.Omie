@@ -19,7 +19,15 @@
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "HOST_DB": "localhost",
+        "DATABASE_DB": "postgres",
+        "USERNAME_DB": "postgres",
+        "PASSWORD_DB": "123456",
+        "PORTA_DB": "5432"
+      }
     }
   }
 }

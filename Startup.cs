@@ -39,11 +39,15 @@ namespace Maxima.Cliente.Omie
         {
             services.AddControllersWithViews();
 
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            var dbPath = $"{path}{System.IO.Path.DirectorySeparatorChar}omie.db";
-            System.Console.WriteLine(dbPath);
-            services.AddDbContext<OmieContext>(opt => opt.UseSqlite($"Data Source={dbPath}"));
+            var hostDb = Environment.GetEnvironmentVariable("HOST_DB");
+            var databaseDb = Environment.GetEnvironmentVariable("DATABASE_DB");
+            var usernameDb = Environment.GetEnvironmentVariable("USERNAME_DB");
+            var passwordDb = Environment.GetEnvironmentVariable("PASSWORD_DB");
+            var portaDb = Environment.GetEnvironmentVariable("PORTA_DB");
+
+            services.AddDbContext<OmieContext>(opt =>
+                    opt.UseNpgsql($"Host={hostDb};Database={databaseDb};Username={usernameDb};Password={passwordDb};Port={portaDb}"));
+
 
             services.AddMaximaSdkService();
 
