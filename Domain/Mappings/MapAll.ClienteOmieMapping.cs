@@ -47,7 +47,7 @@ namespace Maxima.Cliente.Omie.Domain.Mappings
            .ForMember(o => o.CodigoCliente, map => map.MapFrom(s => s.codigo_cliente_omie))
            .ForMember(o => o.ConsumidorFinal, map => map.MapFrom(s => s.pessoa_fisica))
            .ForMember(o => o.EmailNfe, map => map.MapFrom(s => s.email))
-           .ForMember(o => o.BloqueioSefaz, map => map.MapFrom(s => s.bloquear_faturamento.Equals("S") ? "1" : "0"))
+           .ForMember(o => o.BloqueioSefaz, map => map.MapFrom(s => s.bloquear_faturamento))
            .ForMember(o => o.LimiteCredito, map => map.MapFrom(s => s.valor_limite_credito))
            .ForMember(o => o.CodigoPlanoDePagamento, map => map.MapFrom((b, m) =>
             {

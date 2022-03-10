@@ -14,7 +14,7 @@ namespace Maxima.Cliente.Omie.Domain.Mappings
                .ForMember(db => db.CpfCnpj, map => map.MapFrom(b => b.cnpj_cpf))
                .ForMember(db => db.NomeFantasia, map => map.MapFrom(b => b.nome_fantasia))
                .ForMember(db => db.Bairro, map => map.MapFrom(b => b.bairro))
-               .ForMember(db => db.CodigoCidade, map => map.MapFrom(b => b.cidade))
+               .ForMember(db => db.Cidade, map => map.MapFrom(b => b.cidade))
                .ForMember(db => db.Uf, map => map.MapFrom(b => b.estado))
                .ForMember(db => db.NomeTransportadora, map => map.MapFrom(b => b.razao_social))
                .ForMember(db => db.Ativo, map => map.MapFrom(b => b.inativo))

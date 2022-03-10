@@ -13,7 +13,7 @@ namespace Maxima.Cliente.Omie.Domain.Mappings
             CreateMap<TabelaPrecosOmie, RegiaoMaxima>()
                 .ForMember(db => db.CodigoRegiao, map => map.MapFrom(b => b.nCodTabPreco))
                 .ForMember(db => db.NomeRegiao, map => map.MapFrom(b => b.cNome))
-                .ForMember(db => db.Ativo, map => map.MapFrom(b => b.cAtiva))
+                .ForMember(db => db.Ativo, map => map.MapFrom(b => b.cAtiva.Equals("S") ? "A" : "I"))
                 .AfterMap((omie, maxima) =>
                 {
                     maxima.Hash = Utils.UtilsApi.GerarHashMD5(maxima);
@@ -23,7 +23,7 @@ namespace Maxima.Cliente.Omie.Domain.Mappings
                 .ForMember(db => db.Descricao, map => map.MapFrom(b => b.cNome))
                 .ForMember(db => db.CodigoPraca, map => map.MapFrom(b => b.nCodTabPreco))
                 .ForMember(db => db.CodigoRegiao, map => map.MapFrom(b => b.nCodTabPreco))
-                .ForMember(db => db.Ativa, map => map.MapFrom(b => b.cAtiva))
+                .ForMember(db => db.Ativa, map => map.MapFrom(b => b.cAtiva.Equals("S") ? "A" : "I"))
                 .AfterMap((omie, maxima) =>
                 {
                     maxima.Hash = Utils.UtilsApi.GerarHashMD5(maxima);
